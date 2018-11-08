@@ -17,8 +17,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TreatForm"
-            android:label="@string/title_activity_treat_form"></activity>
+            android:name=".ThreatForm"
+            android:label="@string/title_activity_treat_form" />
+        <activity
+            android:name=".ThreatList"
+            android:label="@string/title_activity_threat_list"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AmbientalControl</string>
     <string name="title_activity_treat_form">TreatForm</string>
+    <string name="title_activity_threat_list">ThreatList</string>
 </resources>

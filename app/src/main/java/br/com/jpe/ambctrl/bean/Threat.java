@@ -1,6 +1,8 @@
 package br.com.jpe.ambctrl.bean;
 
-public class Threat {
+import java.io.Serializable;
+
+public class Threat implements Serializable {
 
     String threat;
     String address;
@@ -38,4 +40,5 @@ public class Threat {
     public void setNeighborhood(String neighborhood) {
         this.neighborhood = neighborhood;
     }
+
 }

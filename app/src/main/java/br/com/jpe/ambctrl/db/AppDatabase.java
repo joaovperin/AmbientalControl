@@ -33,6 +33,8 @@ public class AppDatabase extends SQLiteOpenHelper {
 
     public static final String SQL_INIT_DB = new StringBuilder()
             .append("INSERT INTO Threat VALUES ")
-            .append(" ('Perin', 'Novo Hamburgo' , 'Canudos', 666)")
+            .append(" ('Perin', 'Novo Hamburgo' , 'Canudos', 666),")
+            .append(" ('Suelem', 'Estancia' , 'Centro', 10),")
+            .append(" ('Teste', 'Aquele lugar perigoso, sabe?' , 'Um bairro qualquer', 3)")
             .toString();
 }

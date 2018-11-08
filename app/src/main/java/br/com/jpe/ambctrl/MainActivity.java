@@ -1,9 +1,18 @@
 package br.com.jpe.ambctrl;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.jpe.ambctrl.bean.Threat;
 
 public class MainActivity extends Activity implements Constants {
 
@@ -19,10 +28,13 @@ public class MainActivity extends Activity implements Constants {
     }
 
     public void openForm(View v){
-        System.out.println("OPEN FORM");
+        Intent it = new Intent(this, ThreatForm.class);
+        it.putExtra(P_THREAT,  new Threat());
+        startActivity(it);
     }
     public void openList(View v){
-        System.out.println("OPEN LIST");
+        Intent it = new Intent(this, ThreatList.class);
+        startActivity(it);
     }
 
     private String getInfoText(){
