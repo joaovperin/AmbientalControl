@@ -32,6 +32,19 @@ public class ThreatDAO {
         conn.getDb().insert(TABLE_NAME, null, values);
     }
 
+    public void update(Threat bean){
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_THREAT, bean.getThreat());
+        values.put(COLUMN_ADDRESS, bean.getAddress());
+        values.put(COLUMN_NEIGHBORHOOD, bean.getNeighborhood());
+        values.put(COLUMN_THREAT_LEVEL, bean.getThreatLevel());
+        conn.getDb().update(TABLE_NAME, values, COLUMN_THREAT.concat(" = ? "), new String[]{bean.getThreat()});
+    }
+
+    public void delete(String threat){
+        conn.getDb().delete(TABLE_NAME, COLUMN_THREAT.concat(" = ? "), new String[]{threat});
+    }
+
     public List<Threat> select(){
         return select(COLUMN_THREAT);
     }

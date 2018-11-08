@@ -29,7 +29,7 @@ public class MainActivity extends Activity implements Constants {
 
     public void openForm(View v){
         Intent it = new Intent(this, ThreatForm.class);
-        it.putExtra(P_THREAT,  new Threat());
+        it.putExtra(P_ACTION, ACTION_INCLUDE);
         startActivity(it);
     }
     public void openList(View v){

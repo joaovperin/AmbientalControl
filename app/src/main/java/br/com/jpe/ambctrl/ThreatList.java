@@ -26,7 +26,7 @@ public class ThreatList extends Activity {
 
         listView = (ListView) findViewById(R.id.listThreat);
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        listAdapter = new ThreatAdapter(layoutInflater, list);
+        listAdapter = new ThreatAdapter(this, layoutInflater, list);
         listView.setAdapter(listAdapter);
 
         Connection conn = ConnectionFactory.getReadConnection(this);
