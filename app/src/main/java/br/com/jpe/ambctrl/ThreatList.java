@@ -24,11 +24,17 @@ public class ThreatList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_threat_list);
 
+        reloadList();
+
         listView = (ListView) findViewById(R.id.listThreat);
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         listAdapter = new ThreatAdapter(this, layoutInflater, list);
         listView.setAdapter(listAdapter);
 
+    }
+
+    public void reloadList(){
+        list.clear();
         Connection conn = ConnectionFactory.getReadConnection(this);
         ThreatDAO dao = new ThreatDAO(conn);
         for (Threat n : dao.select()){

@@ -18,6 +18,7 @@ import br.com.jpe.ambctrl.db.ConnectionFactory;
 
 import static br.com.jpe.ambctrl.Constants.ACTION_ALTER;
 import static br.com.jpe.ambctrl.Constants.P_ACTION;
+import static br.com.jpe.ambctrl.Constants.P_THREAT;
 
 public class ThreatAdapter extends BaseAdapter {
 
@@ -74,6 +75,7 @@ public class ThreatAdapter extends BaseAdapter {
                 dao.delete(text);
                 conn.commit();
                 conn.close();
+                notifyDataSetChanged();
             }
         });
         // ALTER
@@ -82,8 +84,17 @@ public class ThreatAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(at, ThreatForm.class);
+
+                Threat obj = new Threat();
+                obj.setThreat(tv0.getText().toString());
+                obj.setAddress(tv1.getText().toString());
+                obj.setNeighborhood(tv2.getText().toString());
+                obj.setThreatLevel(Integer.valueOf(tv3.getText().toString()));
+
                 it.putExtra(P_ACTION, ACTION_ALTER);
+                it.putExtra(P_THREAT, obj);
                 at.startActivity(it);
+                notifyDataSetChanged();
             }
         });
 
